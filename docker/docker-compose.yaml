@@ -1,0 +1,96 @@
+version: '3'
+
+services:
+
+
+  # PHP API Service
+  recruit-api:
+    build:
+      context: ../.
+      dockerfile: docker/api/Dockerfile
+    image: php:7.1-fpm
+    container_name: recruit-api
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: recruit-api
+      SERVICE_TAGS: dev
+    working_dir: /var/www/api
+    depends_on:
+      - recruit-nginx
+      - recruit-db
+    volumes:
+     - ./../api:/var/www/api
+     - ./api/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+
+  # PHP Web Service
+  recruit-web:
+    image: php:7.1-fpm
+    container_name: recruit-web
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: recruit-web
+      SERVICE_TAGS: dev
+    working_dir: /var/www/web
+    depends_on:
+      - recruit-nginx
+      - recruit-db
+    volumes:
+      - ./../web:/var/www/web
+      - ./web/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+
+  # Nginx Service
+  recruit-nginx:
+    image: nginx:alpine
+    container_name: recruit-nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3500:3500"
+      - "4000:4000"
+    volumes:
+      - ./../web:/var/www/web
+      - ./../api:/var/www/api
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+
+
+  # MySQL Service
+  recruit-db:
+    image: mysql:5.6
+    container_name: recruit-db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: bark-recruitment
+      MYSQL_ROOT_PASSWORD: no_hacker_no_problem
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - app-network
+
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+
+volumes:
+  dbdata:
+    driver: local

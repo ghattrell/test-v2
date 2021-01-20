@@ -1,0 +1,128 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class ServiceSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $services = [
+            ['House Cleaning', 'cleaners'],
+            ['Dog Training', 'dog-training'],
+            ['Personal Trainers', 'personal-trainer'],
+            ['Counselling', 'counselling'],
+            ['DJ', 'dj-hire'],
+            ['Gardening', 'gardeners'],
+            ['Catering', 'caterers'],
+            ['Photo Booth Hire', 'photo-booth-hire'],
+            ['General Photography', 'photographer'],
+            ['Therapist', 'therapy'],
+            ['Dog Walking', 'dog-walking'],
+            ['Hypnotherapy', 'hypnotherapy'],
+            ['Wedding Photography', 'wedding-photographers'],
+            ['Tree Surgery & Removal', 'tree-surgeon'],
+            ['Painting & Decoration - Interior', 'painter-decorator'],
+            ['Magician', 'magician'],
+            ['Event Entertainment', 'event-entertainment'],
+            ['Nutritionists & Dietitians', 'nutritionist'],
+            ['Limousine Hire', 'limousine-hire'],
+            ['Dog & Pet Grooming', 'pet-grooming'],
+            ['Web Design', 'web-design'],
+            ['Tutoring', 'private-tuition'],
+            ['Event & Party Planners', 'party-event-planners'],
+            ['Accounting', 'accountants'],
+            ['Oven Cleaning', 'oven-cleaners'],
+            ['Fence & Gate Installation', 'fence-installers'],
+            ['Massage Therapy', 'massage-therapy'],
+            ['Architectural Services', 'architects'],
+            ['Private Investigators', 'private-investigators'],
+            ['Wedding Cakes', 'wedding-cakes'],
+            ['Venue Hire', 'venue-hire'],
+            ['Relationship and Marriage Counselling', 'relationship-and-marriage-counselling'],
+            ['Life Coaching', 'life-coaching'],
+            ['CCTV Installation', 'cctv-installation'],
+            ['Wedding Car Hire', 'wedding-car-hire'],
+            ['Roofing Installation or Replacement', 'roofers'],
+            ['Handyman', 'handyman'],
+            ['Gutter Cleaning', 'gutter-cleaning-repairs'],
+            ['Window Cleaners', 'window-cleaners'],
+            ['End of Tenancy Cleaning', 'end-of-tenancy-cleaning'],
+            ['Wedding Flowers', 'wedding-flowers'],
+            ['Bookkeeping Services', 'bookkeeping-services'],
+            ['Carpet Cleaning', 'carpet-cleaning'],
+            ['Marquee Hire', 'marquee-hire'],
+            ['General Builders', 'builders'],
+            ['Event Videography', 'event-videography'],
+            ['Headshot Photographers', 'headshot-photographers'],
+            ['Pet Sitting', 'pet-sitting'],
+            ['Pest Control', 'pest-control'],
+            ['Social Media Marketing', 'social-media-marketing'],
+            ['Deep Cleaning Services', 'deep-cleaning'],
+            ['Private Doctors', 'private-doctors'],
+            ['Landscaping', 'landscaping'],
+            ['Mortgage Advice', 'mortgage-advisors'],
+            ['Computer Repair', 'computer-repair'],
+            ['Residential Interior Designers', 'interior-designer'],
+            ['Driveway Installation', 'driveway-installers'],
+            ['Wedding DJ', 'wedding-dj'],
+            ['Brick & Block Paving Services', 'paving-services'],
+            ['Wedding Makeup', 'wedding-makeup'],
+            ['Wedding Planning', 'wedding-planners'],
+            ['Wills and Estate Planning', 'wills-and-estate-planning'],
+            ['Bathroom Installation & Remodel', 'bathroom-installation'],
+            ['Guitar Lessons', 'guitar-lessons'],
+            ['Wedding Videography', 'wedding-videography'],
+            ['Roof Repair', 'roof-repair'],
+            ['Airport Transfers', 'airport-transfers'],
+            ['Tattoo Artists', 'tattoo-shops'],
+            ['Commercial & Office Cleaning', 'commercial-cleaning'],
+            ['Commercial & Corporate Photographers', 'commercial-photographers'],
+            ['Electricians', 'electricians'],
+            ['Loft Conversions', 'loft-conversion'],
+            ['Aerial & Drone Photography', 'aerial-photography'],
+            ['AV Equipment Rental for Events', 'av-equipment-rental'],
+            ['Mobile Software Development', 'mobile-software-development'],
+            ['Wedding Catering', 'wedding-catering'],
+            ['Garden Clearance', 'garden-clearance'],
+            ['Band Entertainment', 'band-entertainment'],
+            ['Graphic Design', 'graphic-design'],
+            ['Piano Lessons', 'piano-lessons'],
+            ['Security Guard Services', 'security-guards'],
+            ['Maths Tutoring', 'maths-tutors'],
+            ['Pilates Classes', 'pilates-classes'],
+            ['Property Extensions', 'property-extensions'],
+            ['General Plumbing', 'plumbers'],
+            ['Man & Van Services', 'man-van-services'],
+            ['Structural Engineer', 'structural-engineer'],
+            ['Karaoke', 'karaoke'],
+            ['Immigration Lawyers', 'immigration-lawyer'],
+            ['Hair Extensions', 'hair-extensions'],
+            ['Event & Party Photography', 'event-photography'],
+            ['Gutter Repairs & Maintenance', 'gutter-repairs-maintenance'],
+            ['Search Engine Optimization (SEO) Specialists', 'search-engine-optimization'],
+            ['Kennels', 'kennels'],
+            ['General Carpentry', 'carpenters'],
+            ['Kitchen Installation & Remodelling', 'kitchen-fitters'],
+            ['Personal Chef Services', 'personal-chef-services'],
+            ['Motivational Speakers', 'motivational-speakers'],
+            ['House Clearance', 'house-clearance'],
+            ['Garage Conversions', 'garage-conversions'],
+        ];
+
+        DB::table('services')->truncate();
+
+        foreach ($services as $service) {
+            DB::table('services')->insert([
+                'name' => $service[0],
+                'slug' => $service[1],
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now(),
+            ]);
+        }
+    }
+}

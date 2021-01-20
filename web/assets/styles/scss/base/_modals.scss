@@ -1,0 +1,21 @@
+.modal {
+  .modal-confirm {
+    .modal-header {
+
+      color: #fff;
+      background: $success;
+
+      .icon-container {
+        margin: auto;
+      }
+
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        text-shadow: none;
+        opacity: 0.5;
+      }
+    }
+  }
+}

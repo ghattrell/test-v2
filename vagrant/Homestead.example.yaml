@@ -1,0 +1,29 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+  - ~/.ssh/id_rsa
+
+# this is important - it shares the code with vagrant
+folders:
+  - map: ~/Bark/Repositories/bark-recruitment/api
+    to: /home/vagrant/bark-recruit-api
+    type: "nfs" # required for composer to install. sorry
+  - map: ~/Bark/Repositories/bark-recruitment/web
+    to: /home/vagrant/bark-recruit-web
+
+# this is important - it routes the web and api requests
+sites:
+  - map: bark-recruit.local
+    to: /home/vagrant/bark-recruit-web
+  - map: bark-recruit-api.local
+    to: /home/vagrant/bark-recruit-api/public
+
+# this is important - it sets up the schema we use for migrations
+databases:
+  - bark-recruitment

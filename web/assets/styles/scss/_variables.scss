@@ -1,0 +1,156 @@
+// Some of these will be overrides and some will be new styles, watch out for all the greys
+
+//These are all based on the style guide the number represents percentage points on the scale
+$grey: #6C7191;
+$grey-800: #3B416D;
+$grey-600: #6C7191;
+$grey-400: #9DA0B6;
+$grey-200: #CED0DA;
+$grey-100: #E6E7EC;
+$grey-50:  #F3F3F6;
+$grey-25: #F9F9FA;
+$grey-min: #FCFCFC;
+
+
+$white: #FFFFFF;
+
+$default-section-spacing: 6.625em;
+
+$dark-blue: #111637;
+$blue: #2D7AF1;
+$jade: #47BF9C;
+$green: $jade;
+$yellow: #F7BF53;
+$red: #EF6277;
+$background-red: #FDEFF1;
+$background-yellow: #FEF8ED;
+$background-green: #ECF8F5;
+$background-primary: #EAF1FD;
+
+$colors: (
+    "dark-blue": $dark-blue,
+);
+
+$blue-button-hover: #4F99FE;
+$success-hover: #3FAF8E;
+$azure-hover: #1861D1;
+$secondary-hover: $grey-800;
+$danger-hover: #DA5A6D;
+$border-radius: 4px;
+$border-color: $grey-100;
+
+$enable-shadows: false;
+
+$faded-orange: #FDEFD4;
+
+// spacers (
+//     6: 72px,
+//     7: 96px,
+//     8: 128px,
+//     9: 192px,
+// )
+
+$spacer: 1em;
+
+$spacers: (
+    6: ($spacer * 4.5),
+    7: ($spacer * 6),
+    8: ($spacer * 8),
+    9: ($spacer * 12)
+);
+
+$theme-colors: (
+    "primary":#2D7AF1,
+    "secondary": $grey-600,
+    "primary-light":$background-primary,
+    "dark-blue": $dark-blue,
+    "success": $green,
+    "warning": $yellow,
+    "green": $green,
+    "background-green": $background-green,
+    "orange": #fa9750,
+    "yellow": #f7bf53,
+    "background-yellow": $background-yellow,
+    "faded-orange": #FDEFD4,
+    "pink": #ef6277,
+    "red": #ef6277,
+    "background-red": $background-red,
+    "background-primary": $background-primary,
+    "light-grey": $grey-400,
+    "saffron-mango": #F9C665,
+    "sunglo": #E6736C,
+    "cerise-red": #E33E6E,
+    "camelot": #8C2963,
+    "morning-glory": #8CD2DE,
+    "cerulean": #00B0F0,
+    "fun-blue": #155FA0,
+    "jelly-bean": #26848E,
+    "puerto-rico": #47BF9C,
+    "inch-worm": #C1DC17,
+    "perfume": #B2A0F7,
+    "heliotrope": #AF42FF,
+    "darkened-pink": #DA5A6D,
+    "white": #FFFFFF,
+    // here come the grey
+    "grey-25": $grey-25,
+    "grey-50": $grey-50,
+    "grey-800": $grey-800,
+    "grey-600": $grey-600,
+    "grey-400": $grey-400,
+    "grey-200": $grey-200,
+    "grey-100": $grey-100,
+    "grey-min": $grey-min
+);
+
+$max-width-extra-large: 1200px;
+
+$container-max-widths: (
+    xl: $max-width-extra-large
+);
+
+
+// $h1-font-size: 3.75em;
+// $h2-font-size: 3.125em;
+// $h3-font-size: 1.875em;
+// $h4-font-size: 1.625em;
+// $h5-font-size: 1.375em;
+
+$h1-font-size: 2.5em;
+$h2-font-size: 1.875em;
+$h3-font-size: 1.250em;
+$h4-font-size: 1.25em;
+
+
+$dropdown-link-active-color: $dark-blue;
+$dropdown-link-hover-color: $dark-blue;
+$dropdown-bg: $white;
+$dropdown-color: $grey-400;
+$dropdown-link-color: $grey-400;
+
+//This is all the custom control overrides
+
+$custom-control-indicator-checked-box-shadow: 'none';
+$custom-control-indicator-focus-box-shadow: 'none';
+//$custom-control-indicator-active-border-color: $grey-200;
+//$custom-checkbox-indicator-indeterminate-border-color: $grey-200;
+//$custom-control-indicator-checked-border-color: $grey-200;
+$custom-control-indicator-border-color: $grey-200;
+$custom-control-indicator-border-width: 0.125em;
+
+$sizes: ();
+
+$sizes: map-merge(
+  (
+    0: 0,
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto
+  ),
+  $sizes
+);
+$custom-control-indicator-size: 1.25rem;
+
+$body-min-width: 320px;
+$bark-header-height: 75px;

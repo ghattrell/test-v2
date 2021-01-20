@@ -1,0 +1,4 @@
+
+# route the requests to homestead
+192.168.10.10 bark-recruit.local
+192.168.10.10 bark-recruit-api.local

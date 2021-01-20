@@ -1,0 +1,325 @@
+@include font-face('gorditathin', 'gordita-thin-webfont');
+@include font-face('gorditathin_italic', 'gordita-thinitalic-webfont');
+@include font-face('gorditalight', 'gordita-light-webfont');
+@include font-face('gorditalight_italic', 'gordita-lightitalic-webfont');
+@include font-face('gorditaregular', 'gordita-regular-webfont');
+@include font-face('gorditaregular_italic', 'gordita-regularitalic-webfont');
+@include font-face('gorditamedium', 'gordita-medium-webfont');
+@include font-face('gorditamedium_italic', 'gordita-mediumitalic-webfont');
+@include font-face('gorditabold', 'gordita-bold-webfont');
+@include font-face('gorditabold_italic', 'gordita-bolditalic-webfont');
+@include font-face('gorditablack', 'gordita-black-webfont');
+@include font-face('gorditablack_italic', 'gordita-blackitalic-webfont');
+@include font-face('gorditaultra', 'gordita-ultra-webfont');
+@include font-face('gorditaultra_italic', 'gordita-ultraitalic-webfont');
+
+
+body {
+    color: $dark-blue;
+    font-family: 'gorditamedium';
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+};
+
+strong, .stronger, .bold {
+    font-family: 'gorditabold';
+};
+
+.jq-toast-wrap {
+    .jq-toast-single {
+        .jq-toast-heading {
+            font-family: 'gorditamedium';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    }
+}
+
+.lh-sm {
+    line-height: 1.25;
+}
+.lh-md {
+    line-height: 1.5;
+}
+
+.lh-lg {
+    line-height: 1.75;
+}
+
+.lh-xl {
+    line-height: 2;
+}
+
+p {
+    &.p-sm {
+        font-size: 0.938em;
+    }
+
+    &.p-lg {
+        font-size: 1.125em;
+    }
+
+    &.p-xl {
+        font-size: 1.250em;
+    }
+}
+
+.text-sm {
+    font-size: 0.875em;
+}
+
+.text-md {
+    font-size: 1em;
+}
+
+.text-lg {
+    font-size: 1.125em;
+}
+
+.text-xl {
+    font-size: 1.250em;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.error {
+    color: $red;
+}
+
+.regular-text {
+    font-family: 'gorditaregular';
+};
+
+//Same as above on mobile, this is as big as we get.
+.paragraph-text-sm {
+    font-size: 0.938em;
+};
+
+.section-text, .paragraph-text-lg {
+    font-size: 1.125em;
+}
+
+.text-xxs {
+    font-size: 0.75em;
+}
+
+.text-xs {
+    font-size: 0.875em;
+}
+
+.text-xs-14 {
+    font-size: 14px;
+}
+
+.text-sm {
+    font-size: 0.938em;
+}
+
+.text-sm-16 {
+    font-size: 16px;
+}
+
+.text-lg {
+    font-size: 1.125em;
+}
+
+.text-xl {
+    font-size: 1.250em;
+}
+
+a {
+    &.light-grey {
+        color: $grey-400;
+    };
+
+    &.dark-blue {
+        color: $dark-blue;
+    };
+
+    &.underlined {
+        text-decoration: underline;
+    }
+}
+
+h3 {
+    &.h3-no-scale {
+        font-size: 1.875em;
+    }
+}
+
+.italic{
+    font-style: italic;
+}
+
+// Note: this does not work in IE. Also, the autoprefixer directive will apply to the entire block.
+.truncate-at-3-lines{
+    /* autoprefixer: off */
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+}
+
+@include media-breakpoint-up(sm) {
+
+    p {
+        &.p-sm-sm {
+            font-size: 0.938em;
+        }
+
+        &.p-sm-lg {
+            font-size: 1.125em;
+        }
+
+        &.p-sm-xl {
+            font-size: 1.250em;
+        }
+    }
+
+    .text-sm-xs {
+        font-size: 0.75em;
+    }
+
+    .text-sm-sm {
+        font-size: 0.938em;
+    }
+
+    .text-sm-md {
+        font-size: 1em;
+    }
+
+    .text-sm-lg {
+        font-size: 1.125em;
+    }
+
+    .text-sm-xl {
+        font-size: 1.250em;
+    }
+}
+
+@include media-breakpoint-up(md) {
+
+    p {
+        &.p-md-sm {
+            font-size: 0.938em;
+        }
+
+        &.p-md-lg {
+            font-size: 1.125em;
+        }
+
+        &.p-md-xl {
+            font-size: 1.250em;
+        }
+    }
+
+    .text-md-xs {
+        font-size: 0.75em;
+    }
+
+    .text-md-sm {
+        font-size: 0.938em;
+    }
+
+    .text-md-md {
+        font-size: 1em;
+    }
+
+    .text-md-lg {
+        font-size: 1.125em;
+    }
+
+    .text-md-xl {
+        font-size: 1.250em;
+    }
+
+    h1, .h1 {
+        font-size: 3.01em;
+    }
+
+    h2, .h2 {
+        font-size: 2.065em;
+    }
+
+    h3 {
+        font-size: 1.38em;
+
+        &.h3-no-scale {
+            font-size: 1.875em;
+        }
+    }
+}
+@include media-breakpoint-up(lg) {
+    p {
+        &.p-lg-sm {
+            font-size: 0.938em;
+        }
+
+        &.p-lg-lg {
+            font-size: 1.125em;
+        }
+
+        &.p-lg-xl {
+            font-size: 1.250em;
+        }
+    }
+
+    h1 {
+        font-size: 3.41em;
+    }
+
+    h2, .h2 {
+        font-size: 2.27em;
+    }
+
+    h3 {
+        font-size: 1.52em;
+
+        &.h3-no-scale {
+            font-size: 1.875em;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    p {
+        &.p-xl-sm {
+            font-size: 0.938em;
+        }
+
+        &.p-xl-lg {
+            font-size: 1.125em;
+        }
+
+        &.p-xl-xl {
+            font-size: 1.250em;
+        }
+    }
+
+
+    h1 {
+        font-size: 3.75em;
+    }
+
+    h2, .h2 {
+        font-size: 2.75em;
+    }
+
+    h3 {
+        font-size: 1.875em;
+    }
+
+    h4 {
+        font-size: 1.5em;
+    }
+}
+
+@supports (-ms-ime-align:auto) {
+    .text-break {
+        word-wrap: break-word !important;
+        word-break: normal !important;
+    }
+}

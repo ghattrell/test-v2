@@ -1,0 +1,11 @@
+@each $action in ('hover', 'focused') {
+    @each $color, $value in $theme-colors {
+        .bg-#{$action}-#{$color}:#{$action} {
+            background-color: $value !important;
+        }
+    }
+}
+
+.bg-color-animate {
+    animation: background-color .4s;
+}

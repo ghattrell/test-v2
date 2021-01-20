@@ -1,0 +1,7 @@
+/.idea/
+/_ide_helper.php
+.terraform/
+terraform.tfstate.d/
+/terraform/keys
+/terraform/config.tfvars
+/web/node_modules/
