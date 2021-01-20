@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import AsyncSelect, { AsyncProps, Props as SelectAsyncProps } from 'react-select/async'
+import AsyncSelect from 'react-select/async'
 import { Props as SelectProps, OptionTypeBase } from 'react-select'
 import debounce from "lodash.debounce"
 
@@ -7,11 +7,9 @@ import debounce from "lodash.debounce"
 interface Props extends SelectProps<OptionTypeBase, false> {
     className?: string
     loadOptionsFor: 'locations' | 'services'
-    defaultOptions?: SelectOption[] | []
     label?: string
     name: string
     setDropdownData: (...args: any) => any
-    setValue: (...args: any) => void
 }
 
 interface AutoCompleteVars {
@@ -32,7 +30,7 @@ type SelectOption = {
 
 type Variant = 'services' | 'locations'
 
-const Autosuggest: React.FC<Props> = ({ name, label, loadOptionsFor, setDropdownData, defaultOptions, placeholder, setValue }) => {
+const Autosuggest: React.FC<Props> = ({ name, label, loadOptionsFor, setDropdownData, defaultOptions, placeholder, setValue, onChange }) => {
 
     const handleAutoComplete = async ({ type, value, setDropdownData }: AutoCompleteVars, callback: (data: SelectOption[]) => any) => {
         const baseApi = 'http://localhost:4000/api/';
@@ -55,10 +53,6 @@ const Autosuggest: React.FC<Props> = ({ name, label, loadOptionsFor, setDropdown
 
     const handleAutoCompleteChange = useCallback(debounce(handleAutoComplete, 500), []);
 
-    const handleChange = (inputValue: any): void => {
-        setValue(inputValue?.value || null);
-    }
-
     return (
         <>
             {label && <label htmlFor={name}>{label}</label>}
@@ -66,7 +60,7 @@ const Autosuggest: React.FC<Props> = ({ name, label, loadOptionsFor, setDropdown
                 isClearable
                 instanceId={name}
                 loadOptions={(inputValue, callback) => { handleAutoCompleteChange({ type: loadOptionsFor, value: inputValue, setDropdownData }, callback) }}
-                onChange={handleChange}
+                onChange={onChange}
                 defaultOptions={defaultOptions}
                 placeholder={placeholder}
                 name={name}
